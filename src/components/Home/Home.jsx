@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.styles.css";
 
 const Home = ({ dishes }) => {
   return (
