@@ -1,6 +1,7 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header/Header";
-import Home from "./components/Home/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   const dishes = [
@@ -25,10 +26,14 @@ function App() {
   ];
 
   return (
-    <div className="App">
-      <Header title="My restaurant" />
-      <Home dishes={dishes} />
-    </div>
+    <>
+      <BrowserRouter>
+        <Header title="My restaurant" />
+        <Routes>
+          <Route path="/" element={<Home dishes={dishes} />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
